@@ -12,6 +12,7 @@
     list-style: none;
     padding-left: 0;
     margin: 4px 0 0 0;
+    display: flex;
 }
 
 .header__navbar-item {
@@ -20,6 +21,78 @@
     min-height: 26px; 
 }
 
+.header__navbar-user {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu  {
+    display: block;
+}
+
+.header__navbar-user-img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header__navbar-user-name {
+    font-size: 1.4rem;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.header__navbar-user-menu {
+    position: absolute;
+    z-index: 1;
+    width: 160px;
+    top: calc(100% + 6px);
+    right: 0;
+    background-color: var(--white-color);
+    padding-left: 0;
+    border-radius: 2px;
+    list-style: none;
+    box-shadow: 0 1px 2px #e0e0e0;
+    /* display: none; */
+}
+
+.header__navbar-user-menu::before {
+    content: "";
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: -1px;
+    top: -32px;
+} 
+
+.header__navbar-user-menu::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -7px;
+    right: 0;
+    height: 10px;
+    width: 56%;
+}
+.header__navbar-user-item {
+    
+}
+
+.header__navbar-user-item a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 16px;
+    display: block;
+    border-radius: 2px;
+}
+
+.header__navbar-user-item a:hover  {
+    background-color: #fafafa;
+}
 .header__navbar-item--has-qr:hover .header__qr {
     display: block;
 }
@@ -37,6 +110,12 @@
     font-weight: 300;
 }
 
+.header__navbar-item,
+.header__navbar-icon-link,
+.header__navbar-item-link {
+    display: flex;
+    align-items: center;
+}
 .header__navbar-item:hover,
 .header__navbar-icon-link:hover,
 .header__navbar-item-link:hover {
@@ -57,7 +136,7 @@
     height: 16px;
     right: -9px;
     top: 50%;
-    transform: translateY(-75%);
+    transform: translateY(-50%);
 }
 
 .header__navbar-icon-link {
@@ -66,6 +145,11 @@
     font-size: 1.8rem;
     padding-left: 4px;
     top: 0;
+}
+
+.header__navbar-icon {
+    font-size: 1.8rem;
+    margin: 0 4px;
 }
 
 .header__navbar-title-no-pointer {
