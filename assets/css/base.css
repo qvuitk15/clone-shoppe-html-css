@@ -230,4 +230,45 @@ html {
     color: var(--primary-color);
 }
 
+/* Pagination */
+.pagination__home-product {
+    margin: 48px 0 32px 0;
+}
 
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination-item {
+    padding: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: #ed5c3f;
+}
+
+.pagination-item__link {
+    --height: 30px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: block;
+    min-width: 40px;
+    height: var(--height);
+    text-align: center;
+    line-height: var(--height);
+    color: #939393;
+    border-radius: 2px;
+}
+
+.pagination-item__link-icon {
+
+}
