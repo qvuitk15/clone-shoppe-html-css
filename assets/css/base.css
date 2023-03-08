@@ -47,16 +47,6 @@ html {
 }
 
 /* ResPonsive */
-.grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    width: 100%;
-}
-
 .grid__row {
     display: flex;
     flex-wrap: wrap;
@@ -267,8 +257,4 @@ html {
     line-height: var(--height);
     color: #939393;
     border-radius: 2px;
-}
-
-.pagination-item__link-icon {
-
 }
