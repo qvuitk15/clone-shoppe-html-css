@@ -1,3 +1,7 @@
+.wrapper {
+    overflow: hidden;
+}
+
 .header {
     height: var(--header-height);
     background-image: linear-gradient(0 ,#fe6433, #f53e2d);
@@ -476,6 +480,8 @@
 .header__logo-link {
     color: transparent;
     text-decoration: none;
+    display: block;
+    line-height: 0;
 }
 
 .header__search {
@@ -498,6 +504,7 @@
     display: inline-block;
     cursor: pointer;
     padding: 6px 8px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -508,6 +515,7 @@
 
 .header__cart-wrap:hover .header__cart-list{
     display: block;
+    z-index: 15;
 }
 
 .header__cart-list {
@@ -790,6 +798,73 @@
     display: inline-block;
 }
 
+/* Header-sort-bar */
+.header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    margin: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;  
+    display: none;
+}
+
+.header__sort-item {  
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.header__sort-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    line-height: var(--header-sort-bar-height);
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.header__sort-link::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+}
+
+.header__sort-icon {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-left: 8px;
+}
+
+.header__search-mobile {
+    padding: 6px 8px;
+    display: none;
+}
+
+.header__search-mobile-icon {
+    color: var(--white-color);
+    font-size: 2.4rem;
+}
+.header__sort-item--active {
+    color: var(--primary-color);
+}
+
+
+.header__sort-item:first-child .header__sort-link::after {
+    display: none;
+}
 /* Search history */
 .header__search-input:focus ~ .header__search-history {
     display: block;
@@ -924,6 +999,59 @@
     color: var(--primary-color);
 }
 
+
+/* Mobile category */
+.mobile-category {
+    display: none;
+}
+
+.mobile-category__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile-category__item {
+    flex-shrink: 0;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link { 
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+    background-color: #88cf81;
+}
+
+.mobile-category__link {
+    --line-height: 2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: var(--line-height);
+    width: 110px;
+    height: calc(var(--line-height) * 2);
+    border-radius: 5px;
+    font-weight: 300;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 0 6px;
+}
 /* Home sort and filter */
 .home-filter {
     background-color: rgba(0, 0, 0, 0.04);
@@ -1198,6 +1326,7 @@ i.home-product-item-action__like-icon-active {
     font-size: 1.6rem;
     text-transform: uppercase;
     color: var(--text-color);
+    line-height: 1.8rem;
 }
 
 .footer-list {

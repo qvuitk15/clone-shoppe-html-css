@@ -9,6 +9,7 @@
     --header-height: 120px;
     --navbar-height: 34px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
 }
 
 * {
@@ -202,10 +203,10 @@ html {
     display: block;
     position: absolute;
     z-index: 1;
-    top: 0;
+    top: -5px;
     left: 0;
     width: 100%;
-    height: 5px; 
+    height: 10px; 
 }
 
 .selection-input__link {
@@ -223,6 +224,7 @@ html {
 /* Pagination */
 .pagination__home-product {
     margin: 48px 0 32px 0;
+    padding-left: 0;
 }
 
 .pagination {
